@@ -1,0 +1,10 @@
+#!/system/bin/sh
+
+############################
+# Init VNSWAP
+#
+echo 402653184 > /sys/block/vnswap0/disksize
+mkswap /dev/block/vnswap0
+swapon /dev/block/vnswap0
+echo "[pink kernel] VNSWAP Active" | tee /dev/kmsg
+
